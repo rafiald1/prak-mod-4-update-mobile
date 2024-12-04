@@ -13,6 +13,8 @@ import 'package:praktikum_mod_1/app/recipeView/views/http_view.dart';
 import 'package:praktikum_mod_1/app/recipeView/views/recipe_view.dart';
 import '../home/camera/bindings/profile_binding.dart';
 import '../home/camera/views/profile_view.dart';
+import '../map/bindings/location_binding.dart';
+import '../map/views/location_view.dart';
 import '../modules/login/views/login_view.dart';
 
 part 'app_routes.dart';
@@ -61,6 +63,11 @@ class AppPages {
     GetPage(
       name: Routes.AUDIO,
       page: () => const AudioPlayerView(),
+    ),
+    GetPage(
+      name: Routes.LOCATION,
+      page: () => LocationView(),
+      binding: LocationBinding(),
     ),
   ];
 }

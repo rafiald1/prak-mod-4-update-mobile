@@ -32,7 +32,7 @@ class LoginView extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white, // Warna teks judul
+                      color: Colors.white,
                       shadows: [
                         Shadow(
                           blurRadius: 10.0,
@@ -60,7 +60,6 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 16.0),
-
                       TextField(
                         controller: passwordController,
                         obscureText: true,
@@ -69,7 +68,6 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 24.0),
-
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -85,7 +83,6 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 16.0),
-                      // Tombol Daftar
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -97,6 +94,25 @@ class LoginView extends StatelessWidget {
                             child: Text(
                               'Daftar',
                               style: TextStyle(color: Colors.green[800]),
+                            ),
+                          ),
+                        ],
+                      ),
+                      // Tambahkan tombol/link "Kunjungi Toko Kami" dengan underline
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              Get.toNamed('/location'); // Route ke halaman toko
+                            },
+                            child: Text(
+                              'Kunjungi Toko Kami',
+                              style: TextStyle(
+                                color: Colors.green[800], // Warna serasi
+                                decoration:
+                                    TextDecoration.underline, // Garis bawah
+                              ),
                             ),
                           ),
                         ],

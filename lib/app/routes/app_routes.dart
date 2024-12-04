@@ -9,6 +9,7 @@ abstract class Routes {
   static const CRUD = _Paths.CRUD;
   static const PROFILE = _Paths.PROFILE;
   static const AUDIO = _Paths.AUDIO;
+  static const LOCATION = _Paths.LOCATION;
 }
 
 abstract class _Paths {
@@ -20,4 +21,5 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const CRUD = '/crud';
   static const PROFILE = '/profile';
+  static const LOCATION = '/location';
 }
