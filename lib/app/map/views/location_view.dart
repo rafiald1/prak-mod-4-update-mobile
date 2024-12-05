@@ -7,16 +7,10 @@ class LocationView extends StatelessWidget {
   Widget build(BuildContext context) {
     final LocationController controller = Get.find();
 
-    // Controller untuk TextField
-    final TextEditingController destinationLatController =
-        TextEditingController();
-    final TextEditingController destinationLngController =
-        TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Geolocation and Maps',
+          'TOKO RESEP KAMI',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -47,7 +41,7 @@ class LocationView extends StatelessWidget {
                 const SizedBox(height: 20),
                 // Title and Subtitle
                 const Text(
-                  "Titik Koordinat Saat Ini",
+                  "Posisi anda Saat Ini",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22,
