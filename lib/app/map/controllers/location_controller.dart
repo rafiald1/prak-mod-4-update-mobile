@@ -9,12 +9,12 @@ class LocationController extends GetxController {
   // State untuk lokasi saat ini
   var latitude = 0.0.obs;
   var longitude = 0.0.obs;
-  var address = ''.obs; // Menyimpan nama alamat
+  var address = ''.obs;
 
   // Lokasi toko ditentukan manual
-  final double storeLatitude = -7.629268; // Latitude Toko
-  final double storeLongitude = 112.344529; // Longitude Toko
-  var storeAddress = ''.obs; // Menyimpan alamat toko
+  final double storeLatitude = -7.629268;
+  final double storeLongitude = 112.344529;
+  var storeAddress = ''.obs;
 
   // State loading
   var isLoading = false.obs;
@@ -22,21 +22,21 @@ class LocationController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getCurrentLocation(); // Ambil lokasi saat pertama kali controller diinisialisasi
-    getStoreAddress(); // Menentukan alamat toko
+    getCurrentLocation();
+    getStoreAddress();
   }
 
   // Fungsi untuk mendapatkan lokasi saat ini
   Future<void> getCurrentLocation() async {
     isLoading(true);
     try {
-      await _requestPermission(); // Meminta izin lokasi
+      await _requestPermission();
       Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
         forceAndroidLocationManager: true,
       );
-      latitude(position.latitude); // Update latitude
-      longitude(position.longitude); // Update longitude
+      latitude(position.latitude);
+      longitude(position.longitude);
 
       // Lakukan reverse geocoding untuk mendapatkan nama tempat
       List<Placemark> placemarks = await GeocodingPlatform.instance!
@@ -70,7 +70,7 @@ class LocationController extends GetxController {
           storeLatitude,
           storeLongitude,
         ) /
-        1000; // Hasil dalam kilometer
+        1000;
   }
 
   // Fungsi untuk membuka Google Maps dan menampilkan rute
@@ -79,7 +79,7 @@ class LocationController extends GetxController {
         "https://www.google.com/maps/dir/?api=1&origin=${latitude.value},${longitude.value}&destination=${storeLatitude},${storeLongitude}&travelmode=driving";
     if (await canLaunch(googleMapsUrl)) {
       await launch(googleMapsUrl);
-      // Kembali ke halaman awal setelah membuka Google Maps
+
       Navigator.pop(context);
     } else {
       Get.snackbar(

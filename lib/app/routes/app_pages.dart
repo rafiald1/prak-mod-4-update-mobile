@@ -11,6 +11,7 @@ import 'package:praktikum_mod_1/app/modules/login/views/register_view.dart';
 import 'package:praktikum_mod_1/app/recipeView/bindings/http_binding.dart';
 import 'package:praktikum_mod_1/app/recipeView/views/http_view.dart';
 import 'package:praktikum_mod_1/app/recipeView/views/recipe_view.dart';
+import '../home/bindings/connection_binding.dart';
 import '../home/camera/bindings/profile_binding.dart';
 import '../home/camera/views/profile_view.dart';
 import '../map/bindings/location_binding.dart';
@@ -31,9 +32,9 @@ class AppPages {
       binding: AuthBinding(),
     ),
     GetPage(
-      name: _Paths.HOME,
+      name: Routes.HOME,
       page: () => const HomeView(),
-      binding: HomeBinding(),
+      binding: ConnectionBinding(), // Pastikan binding dipasang dengan benar
     ),
     GetPage(
       name: _Paths.HTTP,

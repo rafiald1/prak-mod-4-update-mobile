@@ -6,6 +6,7 @@ import 'package:praktikum_mod_1/app/recipeView/views/recipe_view.dart';
 import 'package:praktikum_mod_1/app/routes/app_pages.dart';
 import '../../modules/login/controllers/auth_controller.dart';
 import '../camera/controllers/profile_controller.dart';
+import '../controllers/connection_controller.dart';
 import '../controllers/home_controller.dart';
 import 'dart:io';
 
@@ -20,6 +21,7 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final connectionController = Get.find<ConnectionController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('NusaBites'),

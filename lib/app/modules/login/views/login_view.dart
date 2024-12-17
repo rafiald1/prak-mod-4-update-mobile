@@ -82,6 +82,7 @@ class LoginView extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
+
                       SizedBox(height: 16.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -104,14 +105,13 @@ class LoginView extends StatelessWidget {
                         children: [
                           TextButton(
                             onPressed: () {
-                              Get.toNamed('/location'); // Route ke halaman toko
+                              Get.toNamed('/location');
                             },
                             child: Text(
                               'Kunjungi Toko Kami',
                               style: TextStyle(
-                                color: Colors.green[800], // Warna serasi
-                                decoration:
-                                    TextDecoration.underline, // Garis bawah
+                                color: Colors.green[800],
+                                decoration: TextDecoration.underline,
                               ),
                             ),
                           ),
